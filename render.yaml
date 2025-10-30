@@ -2,9 +2,9 @@ services:
   - type: web
     name: cluster
     branch: master
-    plan: free
+    plan: pro
     dockerfilePath: ./Dockerfile
-    repo: https://github.com/mysterydemon/Botclusters
+    repo: https://github.com/greatautomate/BotClusters
     env: docker
     envVars:
       - key: CLUSTER_01
