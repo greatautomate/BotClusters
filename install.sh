@@ -2,24 +2,25 @@
 set -e
 
 usage() {
-    echo "Usage: $0 [--dnf-packages \"pkg1 pkg2...\"] [--pip-packages \"pkg1 pkg2...\"]"
+    echo "Usage: \$0 [--dnf-packages \"pkg1 pkg2...\"] [--pip-packages \"pkg1 pkg2...\"]"
     exit 1
 }
 
+# Add your bot's required packages here
 DNF_PACKAGES="nano"
-PIP_PACKAGES="croniter python-dateutil apscheduler"
+PIP_PACKAGES="croniter python-dateutil apscheduler python-telegram-bot requests"
 
 echo "[INFO] Starting install.sh script"
 
 while [[ $# -gt 0 ]]; do
-    case $1 in
+    case \$1 in
         --dnf-packages)
-            DNF_PACKAGES="$2"
+            DNF_PACKAGES="\$2"
             echo "[INFO] Overriding DNF packages to install: $DNF_PACKAGES"
             shift 2
             ;;
         --pip-packages)
-            PIP_PACKAGES="$2"
+            PIP_PACKAGES="\$2"
             echo "[INFO] Overriding PIP packages to install: $PIP_PACKAGES"
             shift 2
             ;;
